@@ -1,3 +1,3 @@
 # Etch-A-Sketch
 
-The Odin Prject: Etch-A-Sketch
+The Odin Project: Etch-A-Sketch

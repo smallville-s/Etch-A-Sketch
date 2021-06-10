@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: auto;
+    width: fit-content;
+}
+button {
+    margin: 20px;
+}
+#sketch {
+    display: inline-grid;
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(16, 20px);
+    gap: 1px;
+    background-color: black;
+    border: solid black 1px;
+}
+
+.cell {
+    background-color: white; 
+}
+
+.color {
+    background-color: black;
+}

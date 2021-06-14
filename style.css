@@ -10,17 +10,18 @@
 }
 button {
     margin: 20px;
+    padding: 3px;
 }
 #sketch {
     display: inline-grid;
-    grid-template-columns: repeat(16, 20px);
-    grid-template-rows: repeat(16, 20px);
+    width: 560px;
+    height: 560px;
     gap: 1px;
     background-color: black;
     border: solid black 1px;
 }
 
-.cell {
+div {
     background-color: white; 
 }
 

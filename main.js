@@ -5,10 +5,10 @@ function createGrid(gridSize) {
     for (let i = 1; i <= gridSize*gridSize; i++) {
         const div = document.createElement("div");
         div.className = "cell";
-        div.addEventListener("mouseover", (e) => {
-            div.classList.add("color");
-        });
         grid.appendChild(div);
+        div.addEventListener("mouseover", (e) => {
+            div.style.backgroundColor = setColor();
+        });
     }
 }
 
@@ -17,11 +17,24 @@ createGrid(16);
 const clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", () => {
     const cells = document.querySelectorAll(".cell");
-    cells.forEach(cell => cell.classList.remove("color"));
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "";
+    });
 });
 
 const changeGrid = document.getElementById("changeGrid");
 changeGrid.addEventListener("click", setGridSize);
+
+let color = "black";
+const randomBtn = document.getElementById("randomColor");
+randomBtn.addEventListener("click", () => {
+    randomBtn.classList.toggle("pressed");
+    if (color == "black") {
+        color = "random";
+    } else if (color == "random") {
+        color = "black";
+    }
+});
 
 function setGridSize() {
     let newGridSize = prompt("Enter between 1 and 64 squares per side to make the new grid.");
@@ -34,4 +47,15 @@ function setGridSize() {
     grid.innerHTML="";
     createGrid(newGridSize);
     }
+}
+
+function setColor() {
+    return color == "random" ? randomColor() : "black";
+}
+
+function randomColor() {
+    let r = Math.round(Math.random()*255);
+    let g = Math.round(Math.random()*255);
+    let b = Math.round(Math.random()*255);
+    return `rgb(${r},${b},${g})`;
 }

@@ -28,3 +28,6 @@ div {
 .color {
     background-color: black;
 }
+.pressed {
+    box-shadow: 0 0 10px grey;
+}

@@ -25,15 +25,9 @@ clearBtn.addEventListener("click", () => {
 const changeGrid = document.getElementById("changeGrid");
 changeGrid.addEventListener("click", setGridSize);
 
-let color = "black";
 const randomBtn = document.getElementById("randomColor");
 randomBtn.addEventListener("click", () => {
     randomBtn.classList.toggle("pressed");
-    if (color == "black") {
-        color = "random";
-    } else if (color == "random") {
-        color = "black";
-    }
 });
 
 function setGridSize() {
@@ -50,7 +44,8 @@ function setGridSize() {
 }
 
 function setColor() {
-    return color == "random" ? randomColor() : "black";
+    return randomBtn.classList.contains("pressed") ? 
+        randomColor() : "black";
 }
 
 function randomColor() {
